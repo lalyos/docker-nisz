@@ -1,0 +1,17 @@
+services:
+
+  db:
+    image: postgres:17
+    environment:
+    - POSTGRES_PASSWORD=secret
+    volumes:
+    - ./sql:/docker-entrypoint-initdb.d
+    - db_food:/var/lib/postgresql/data
+  
+  adminer:
+    image: adminer
+    ports:
+    - 8080
+
+volumes:
+  db_food:
