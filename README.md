@@ -51,6 +51,10 @@ docker run -dP lalyos/12factor:v2.0
 
 
 ```
+
+mkdir sql
+curl -s https://raw.githubusercontent.com/lalyos/docker-nisz/refs/heads/master/sql/init.sql -o ./sql/init.sql
+
 docker rm -f db
 docker volume rm db_food
 docker run -d --rm \
@@ -61,9 +65,10 @@ docker run -d --rm \
   postgres:17
 ```
 
-
-
-
+list foods
+```
+alias food="docker exec db  psql -U postgres postgres -c 'select * from food;'"
+```
 
 ## Devcontainer
 
