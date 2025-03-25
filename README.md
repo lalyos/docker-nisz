@@ -27,3 +27,22 @@ use the new image
 ```
 docker run -dP lunch:v2
 ```
+
+## git repo 
+
+```
+cd ..
+git clone https://github.com/lalyos/docker-nisz
+cd docker-nisz
+```
+
+build image from git repo
+```
+docker build -t lunch:git https://github.com/lalyos/docker-nisz.git
+```
+
+## Image from docker hub
+
+```
+docker run -dP lalyos/12factor:v2.0
+```
