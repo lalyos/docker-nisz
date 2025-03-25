@@ -47,6 +47,14 @@ docker build -t lunch:git https://github.com/lalyos/docker-nisz.git
 docker run -dP lalyos/12factor:v2.0
 ```
 
+# Networking
+
+```
+docker network ls
+docker network create blue
+docker network inspect blue
+```
+
 # Volumes
 
 
@@ -69,6 +77,13 @@ docker run -d --rm \
 list foods
 ```
 alias food="docker exec db  psql -U postgres postgres -c 'select * from food;'"
+```
+
+
+## Adminer
+
+```
+docker run -dP --net=blue adminer
 ```
 
 ## Devcontainer
