@@ -59,6 +59,7 @@ docker rm -f db
 docker volume rm db_food
 docker run -d --rm \
   --name db \
+  --net=blue \
   -v $PWD/sql:/docker-entrypoint-initdb.d \
   -v db_food:/var/lib/postgresql/data \
   -e POSTGRES_PASSWORD=secret \
