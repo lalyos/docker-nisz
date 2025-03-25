@@ -1,6 +1,14 @@
 
 name: dev
 services:
+  gohome:
+    image: lalyos/12factor
+    environment:
+    - TITLE=Lalyos can go home
+    - COLOR=cyan
+    - BODY=<iframe src="https://giphy.com/embed/9rO5Aksmn0dHQKXJAu" width="480" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kikitech-cat-kiki-9rO5Aksmn0dHQKXJAu">via GIPHY</a></p>
+    ports:
+    - 80
 
   db:
     image: postgres:17
