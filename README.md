@@ -46,3 +46,27 @@ docker build -t lunch:git https://github.com/lalyos/docker-nisz.git
 ```
 docker run -dP lalyos/12factor:v2.0
 ```
+
+# Volumes
+
+
+```
+docker rm -f db
+docker volume rm db_food
+docker run -d --rm \
+  --name db \
+  -v $PWD/sql:/docker-entrypoint-initdb.d \
+  -v db_food:/var/lib/postgresql/data \
+  -e POSTGRES_PASSWORD=secret \
+  postgres:17
+```
+
+
+
+
+
+## Devcontainer
+
+```
+docker run -it --rm   -v $PWD:$PWD -w $PWD node:23 bash
+```
